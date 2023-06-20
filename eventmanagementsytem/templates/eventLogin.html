@@ -1,0 +1,226 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        nav{
+            height: 90px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            overflow: hidden;
+        }
+
+        li{
+            display: inline;
+            margin: 0px 1.5625vw;
+            font-size: 17px;
+            color: white;
+        }
+
+        a{
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+        }
+
+        .item{
+            margin: 0px 0px 0px 31.25vw;
+        }
+        .container{
+            height: auto;
+            background-color: rgb(255, 255, 255);
+        }
+        .image{
+            height: 100vh;
+            width: 98.7vw;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            overflow: hidden;
+        }
+
+        #eventTitle{
+            font-size: 20px;
+            color: white;
+        }
+
+        #logout{
+            height: 30px;
+            width: 99px;
+            border-radius: 5px;
+            
+        }
+
+        .centerTitle{
+            height: 84%;
+            width: 100%;
+            /* background-color: rgb(0, 0, 0); */
+            color: rgb(255, 255, 255);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        #oneStop{
+            color: white;
+            font-size: 63px;
+            font-family: 'Roboto Slab', serif;
+            font-weight: 500;
+            line-height: 1.1;
+            margin: 0.17em 0;
+            text-align: center;
+            text-shadow: 4px 4px black;
+        }
+        #celebrate{
+            color: white;
+            font-size: 63px;
+            font-family: 'Roboto Slab', serif;
+            font-weight: 500;
+            line-height: 1.1;
+            margin: 0.67em 0;
+            text-align: center;
+            text-shadow: 4px 4px black;
+        }
+        footer{
+            height: 50vh;
+            width: 100%;
+            background-color: aqua;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leftFooter{
+            height: 100%;
+            width: 40vw;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .collegeName{
+            height: 100%;
+            width: 70%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Josefin Sans', sans-serif;
+            overflow: hidden;
+            font-size: 45px;
+        }
+        .small{
+            color: rgb(109, 104, 104);
+        }
+
+        h6{
+            margin: 0px 30px 0px 0px;
+        }
+        table{
+        width:100%
+        }
+	    table,th,td {
+		    border: 1px solid black;
+		    border-collapse: collapse;
+            margin: 40px 0px 0px 0px;
+	    }
+	    th,td {
+		    padding: 5px;
+	    }
+        #creatEvent{
+            height: 7vh;
+            width: 10vw;
+            border-radius: 3px;
+            border: 1px solid rgb(0, 0, 0);
+            margin: 10px 0px 40px 0px;
+            color: black;
+        }
+        #buttom{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image" style="background-image: url({% static 'images/bgImage1.jpg' %})">
+            <nav>
+                <p id="eventTitle">Event Management System</p>
+                <div class="item">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/event/">Event</a></li>
+                        <li><a href="/location/">Location</a></li>
+                        {% if request.session.logedin %}
+                            <a href="/logout/"><button id="logout">Logout</button></a>
+                        {% else %}
+                            <a href="/login/"><button id="logout">Login</button></a>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+            <div class="centerTitle">
+                <h1 id="oneStop">One Stop</h1>
+                <h1 id="celebrate">Celebrate your events that lasts longer</h1>
+            </div>
+        </div>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Cost</th>
+                <th>Location</th>
+            </tr>
+            <tr>
+                <td>Sibashis</td>
+                <td>Sibashis</td>
+                <td>Sibashis</td>
+                <td>Sibashis</td>
+                <td>Sibashis</td>
+            </tr>
+
+        </table>
+        <a id="buttom"href="creatEvent.html"><button id="creatEvent">Creat Event</a></button>
+    </div>
+    <footer>
+        <div class="leftFooter">
+            <div class="collegeName">
+                <p class="footerContent1">
+                    <strong>E</strong><span class="small footerSubtext">vent</span>
+                    <strong>M</strong><span class="small footerSubtext">anagement</span>
+                    <strong>S</strong><span class="small footerSubtext">ystem</span>
+                </p>
+            </div>
+        </div>
+        <div class="rightFooter">
+            <h4>Sibashis All Copy Reserved&copy;</4>
+        </div>
+    </footer>
+</body>
+<script>
+  function logout() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "logout.html", true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+        // Redirect to the login page after successful logout
+        window.location.href = "index.html";
+      }
+    };
+    xhr.send();
+  }
+</script>
+
+</html>

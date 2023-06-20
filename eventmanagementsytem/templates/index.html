@@ -1,0 +1,305 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        nav{
+            height: 90px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            overflow: hidden;
+        }
+
+        li{
+            display: inline;
+            margin: 0px 1.5625vw;
+            font-size: 17px;
+            
+        }
+        a{
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+        }
+        .item{
+            margin: 0px 0px 0px 31.25vw;
+        }
+        .container{
+            height: 410vh;
+            background-color: rgb(255, 255, 255);
+        }
+        .image{
+            height: 100vh;
+            width: 98.7vw;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            overflow: hidden;
+        }
+
+        #eventTitle{
+            font-size: 20px;
+            color: white;
+        }
+
+        #logout{
+            height: 30px;
+            width: 99px;
+            border-radius: 5px;
+            
+        }
+        .centerTitle{
+            height: 84%;
+            width: 100%;
+            /* background-color: rgb(0, 0, 0); */
+            color: rgb(255, 255, 255);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        #oneStop{
+            color: white;
+            font-size: 63px;
+            font-family: 'Roboto Slab', serif;
+            font-weight: 500;
+            line-height: 1.1;
+            margin: 0.17em 0;
+            text-align: center;
+            text-shadow: 4px 4px black;
+        }
+        #celebrate{
+            color: white;
+            font-size: 63px;
+            font-family: 'Roboto Slab', serif;
+            font-weight: 500;
+            line-height: 1.1;
+            margin: 0.67em 0;
+            text-align: center;
+            text-shadow: 4px 4px black;
+        }
+        .middle{
+            height: 310vh;
+            width: 100%;
+            background-color: rgb(255, 0, 0);
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+        }
+        .content{
+            height: 310vh;
+            width: 85%;
+            background-color: white ;
+            overflow: hidden;
+        }
+        .organized{
+            height: 100px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            background-color: rgb(255, 255, 255);
+        }
+        .box1{
+            height: 56.719022687609076vh;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            margin: 40px 0px;
+            display: flex;
+        }
+        .left{
+            height: 56.719022687609076vh;
+            width: 38.1875vw;
+            display: inline-block;
+        }
+        .right{
+            display: inline-block;
+            background-color: rgb(255, 255, 255);
+            vertical-align: top;
+            width: 100%;
+            margin: 0px 0px 0px 85px;
+        }
+        .wedding{
+            font-weight: 90;
+            margin-top: 5px;
+            color: #2C3E50;
+            letter-spacing: 10px;
+        }
+        .text{
+            margin: 20px 0px 0px 0px;
+            font-family: 'Josefin Sans', sans-serif;
+            line-height: 2;
+            font-weight:200px;
+            height: 26vh;
+            background-color: white;
+        }
+        #boxButton{
+            height: 8vh;
+            width: 13vw;
+            border-radius: 10px;
+            border: 1px solid rgb(0, 0, 0);
+            font-size: 18px;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: bold;
+        }
+
+        footer{
+            height: 50vh;
+            width: 100%;
+            background-color: aqua;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leftFooter{
+            height: 100%;
+            width: 40vw;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .collegeName{
+            height: 100%;
+            width: 70%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Josefin Sans', sans-serif;
+            overflow: hidden;
+            font-size: 45px;
+        }
+        .small{
+            color: rgb(109, 104, 104);
+        }
+
+        h6{
+            margin: 0px 30px 0px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image" style="background-image: url({% static 'images/bgImage1.jpg' %})">
+            <nav>
+                <p id="eventTitle">Event Management System</p>
+                <div class="item">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/event/">Event</a></li>
+                        <li><a href="/location/">Location</a></li>
+                        {% if request.session.logedin %}
+                            <a href="/logout/"><button id="logout">Logout</button></a>
+                        {% else %}
+                            <a href="/login/"><button id="logout">Login</button></a>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>	
+            <div class="centerTitle">
+                <h1 id="oneStop">One Stop</h1>
+                <h1 id="celebrate">Celebrate your events that lasts longer</h1>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="content">
+                <div class="organized">
+                    What we organize
+                </div>
+                <hr>
+                <div class="box1">
+                    <div class="left">
+                        <img src="{% static 'images/wedding2.jpg' %}" alt="">
+                    </div>
+                    <div class="right">
+                        <div class="wedding">
+                            <h1>Wedding</h1>
+                        </div>
+                        <div class="text">
+                            The most important day in a couple's life. Guaranteeing personalized solutions and flawless execution, our venues provide the perfect location for your special day.
+                        </div>
+                        <br>
+                        <button id="boxButton">View Event</button>
+                    </div>
+                </div>
+                <hr>
+                <div class="box1">
+                    <div class="left">
+                        <img src="{% static 'images/birthday2.jpg' %}" alt="">
+                    </div>
+                    <div class="right">
+                        <div class="wedding">
+                            <h1>Birthday</h1>
+                        </div>
+                        <div class="text">
+                            Whether an all-day or the ultimate extravaganza that lasts well into the wee hours, our Urban Events team is here to make sure all your birthday party wishes come true so you can kick back, drink up and enjoy your special day!
+                        </div>
+                        <br>
+                        <button id="boxButton">View Event</button>
+                    </div>
+                </div>
+                <hr>
+                <div class="box1">
+                    <div class="left">
+                        <img src="{% static 'images/fashion2.jpg' %}" alt="">
+                    </div>
+                    <div class="right">
+                        <div class="wedding">
+                            <h1>Fashion</h1>
+                        </div>
+                        <div class="text">
+                            Fast becoming to go-to location for fashion events, PR gatherings and product launches, The Urban Purveyor Group venues provide you with choice and quality in premium locations for all your event needs.
+                        </div>
+                        <br>
+                        <button id="boxButton">View Event</button>
+                    </div>
+                </div>
+                <hr>
+                <div class="box1">
+                    <div class="left">
+                        <img src="{% static 'images/meeting2.jpg' %}" alt="">
+                    </div>
+                    <div class="right">
+                        <div class="wedding">
+                            <h1>Meeting</h1>
+                        </div>
+                        <div class="text">
+                            From formal, to not-so-formal, our flexible event spaces can cater to your every need for meetings and conferences large or small, and our dedicated event team can assist with all aspects of your event planning.
+                        </div>
+                        <br>
+                        <button id="boxButton">View Event</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="leftFooter">
+            <div class="collegeName">
+                <p class="footerContent1">
+                    <strong>E</strong><span class="small footerSubtext">vent</span>
+                    <strong>M</strong><span class="small footerSubtext">anagement</span>
+                    <strong>S</strong><span class="small footerSubtext">ystem</span>
+                </p>
+            </div>
+        </div>
+        <div class="rightFooter">
+            <h4>Sibashis All Copy Reserved&copy;</4>
+        </div>
+    </footer>
+</body>
+</html>
