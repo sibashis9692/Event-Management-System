@@ -1,5 +1,17 @@
 # Event-Management-System
 
-This is an Event Management System project. It includes a login page, register page, home page, event page, and location page.
+Features:-
+Event Management: Allows CRUD (Create, Read, Update, Delete) operations for users. Users can register, login, and manage their events.
 
-To run the application, please ensure that you have set up a database with the name "sibashis" (you can choose a different name and update it in the settings.py file if desired)
+Installation:-
+  * Clone the repository
+      * git clone < https://github.com/sibashis9692/Task-List.git >
+  * Install the required dependencies using pip
+      * pip install Django
+      * pip install mysql-connector-python
+  * Set up the MySQL databse. Make sure to update the database setting in the setting.py file with your MySQL credentials.
+  * Apply database migrations
+      * python manage.py migrate
+  * Start the development server
+      * python manage.py runserver
+  * Acess the application by visiting http://localhost:8000 in your web browser.
