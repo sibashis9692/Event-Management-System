@@ -1,5 +1,5 @@
 # Event-Management-System
-This is a Event Management System project. this is have a login page, register page, Home page, event page, locationpage. 
 
+This is an Event Management System project. It includes a login page, register page, home page, event page, and location page.
 
-For run the application make sure make a database with sibashis ( if you want to give name some thing different then update the db name on setting.py)
+To run the application, please ensure that you have set up a database with the name "sibashis" (you can choose a different name and update it in the settings.py file if desired)
