@@ -5,7 +5,7 @@ Event Management: Allows CRUD (Create, Read, Update, Delete) operations for user
 
 Installation:-
   * Clone the repository
-      * git clone < https://github.com/sibashis9692/Task-List.git >
+      * git clone < https://github.com/sibashis9692/Event-Management-System.git >
   * Install the required dependencies using pip
       * pip install Django
       * pip install mysql-connector-python
